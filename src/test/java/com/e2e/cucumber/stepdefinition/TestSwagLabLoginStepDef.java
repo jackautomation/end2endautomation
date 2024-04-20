@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 import com.e2e.cucumber.common.TestStarter;
 import com.e2e.cucumber.common.Utils;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -33,7 +34,7 @@ public class TestSwagLabLoginStepDef extends Utils {
 			
 		}
 	}
-	@FindBy(css = "//input[@id='user-name']")
+	@FindBy(xpath = "//input[@id='user-name']")
 	private WebElement usernamePath;
 	
 	@And("login with correct username")
@@ -46,7 +47,7 @@ public class TestSwagLabLoginStepDef extends Utils {
 			
 		}
 	}
-	@FindBy(css="//input[@id='password']")
+	@FindBy(xpath="//input[@id='password']")
 	private WebElement passwordPath;
 	
 	@Then("login with correct password")
@@ -59,10 +60,10 @@ public class TestSwagLabLoginStepDef extends Utils {
 		}
 	}
 	
-	@FindBy(css="//input[@id='login-button']")
+	@FindBy(xpath="//input[@id='login-button']")
 	private WebElement loginButton;
 	
-	@FindBy(css="//div[@class='app_logo']")
+	@FindBy(xpath="//div[@class='app_logo']")
 	private WebElement appLogValidate;
 	
 	@Then("login to swag labs")
@@ -74,5 +75,10 @@ public class TestSwagLabLoginStepDef extends Utils {
 		catch(Exception e) {
 			
 		}
+	}
+	
+	@After
+	public void quitServer() {
+		driver.quit();
 	}
 }

@@ -26,8 +26,13 @@ public class Utils extends TestStarter{
 	
 	public String propertyFileHandle(String key) throws IOException {
 		Properties properties = new Properties();
-		FileInputStream input = new FileInputStream(new File("credential.properties"));
-		
+		FileInputStream input = null;
+		try {
+		input = new FileInputStream(new File("src//test//resources//credential.properties"));
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		properties.load(input);
 		String property = (String) properties.get(key);
 		return property;
