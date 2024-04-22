@@ -56,7 +56,7 @@ public class TestSwagLabLoginStepDef extends Utils {
 			clickElementAndEnterText(passwordPath, propertyFileHandle("sales.password"));
 		}
 		catch(Exception e) {
-			
+			logger.info("Failed on login");
 		}
 	}
 	
