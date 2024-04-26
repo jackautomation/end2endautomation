@@ -1,10 +1,12 @@
 package com.e2e.cucumber.stepdefinition;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,10 +17,11 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import net.bytebuddy.asm.Advice.This;
 
 public class TestSwagLabLoginStepDef extends Utils {
 
-    private static final Logger logger = LogManager.getLogger(TestSwagLabLoginStepDef.class);
+    private static final Logger logger = LoggerFactory.getLogger(This.class);
 
 	public TestSwagLabLoginStepDef() {
 		PageFactory.initElements(driver,this);
