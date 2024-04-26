@@ -9,7 +9,7 @@ import io.cucumber.junit.Cucumber;
 @CucumberOptions(features = "src\\test\\resources\\swaglab\\feature",
 				glue = "com.e2e.cucumber.stepdefinition",
 				monochrome = true,
-				plugin = {"pretty", "html:target/cucumber-reports"}
+				plugin = {"pretty", "html:target/cucumber-reports.html"}
 		)
 
 public class TestRunner {
